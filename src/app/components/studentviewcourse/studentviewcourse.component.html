@@ -1,0 +1,68 @@
+<app-usernav></app-usernav>
+
+<h1>Available Courses</h1>
+
+<input type="text" [(ngModel)]="searchText" name="searchText" placeholder="Search by Course Name">
+
+<table>
+  <thead>
+    <tr>
+      <th>S.No</th>
+      <th>Course Name</th>
+      <th>Course Description</th>
+      <th>Start Date</th>
+      <th>End Date</th>
+      <th>Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let course of courses | searchcourse: searchText; index as i">
+      <td>{{ i + 1 }}</td>
+      <td>{{ course.title }}</td>
+      <td>{{ course.description }}</td>
+      <td>{{ course.courseStartDate | date: 'mediumDate' }}</td>
+      <td>{{ course.courseEndDate | date: 'mediumDate' }}</td>
+      <td>
+        <button (click)="enroll(course.courseId)" [disabled]="enrolledCourses.includes(course.courseId)">
+          {{ enrolledCourses.includes(course.courseId) ? 'Enrolled' : 'Enroll' }}
+        </button>
+        <button (click)="viewMaterial(course.courseId)">View Material</button>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<!-- Dialog Box -->
+<div class="dialog-overlay" *ngIf="isDialogVisible">
+  <div class="dialog-box">
+    <p>Are you sure you want to enroll in this course?</p>
+    <div class="dialog-actions">
+      <button (click)="closeDialog()">Cancel</button>
+      <button (click)="yesEnroll()">Yes, Enroll</button>
+    </div>
+  </div>
+</div>
+
+<!-- Success Dialog Box -->
+<div class="dialog-overlay" *ngIf="success && !isDialogVisible">
+  <div class="dialog-box">
+    <p>Enrollment Successful!</p>
+    <button (click)="closeDialog()">Close</button>
+  </div>
+</div>
+
+<!-- Material Dialog Box -->
+<div class="dialog-overlay" *ngIf="materialDialogVisible">
+  <div class="dialog-box">
+    <h2>Materials for Course: {{ selectedCourse?.title }}</h2>
+    <div class="materials-container">
+      <div class="material-item" *ngFor="let material of courseMaterials">
+        <h3>Title: {{ material.title }}</h3>
+        <p>Description: {{ material.description }}</p>
+        <a [href]="material.url">Open Material</a>
+        <p>Uploaded on: {{ material.uploadDate | date:'mediumDate' }}</p>
+      </div>
+    </div>
+    <button (click)="closeMaterialDialog()">Close</button>
+  </div>
+</div>

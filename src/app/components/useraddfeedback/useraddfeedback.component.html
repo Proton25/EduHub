@@ -1,0 +1,20 @@
+ <app-usernav></app-usernav>
+<div class="container">
+    <div>
+    <label for="feedbackText">FeedBack<span>*</span></label>
+    <form [formGroup]="feedbackForm" (ngSubmit)="addFeedback()">
+    <textarea id="feedbackText" cols="30" rows="10" required formControlName="feedbackText">
+    </textarea>
+    <div>
+    <span *ngIf="feedbackForm.controls.feedbackText?.invalid && feedbackForm.controls.feedbackText?.touched">FeedBack is Required</span>
+    </div>
+    <button type="submit">Submit</button>
+    </form>
+    </div>
+    </div>
+    <div *ngIf="showPopup" class="popup">
+    <div class="popup-content">
+    <p>Feedback Added Successfully!!</p>
+    <button (click)="closePopup()">OK</button>
+    </div>
+    </div>

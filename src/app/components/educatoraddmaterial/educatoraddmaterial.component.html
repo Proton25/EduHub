@@ -1,0 +1,47 @@
+<app-adminnav></app-adminnav>
+<form [formGroup]="materialForm" (ngSubmit)="onSubmit()">
+  <h1>Add Material</h1>
+  <div>
+    <label for="title">Title: </label>
+    <input id="title" formControlName="title">
+    <div *ngIf="materialForm.controls.title.touched && materialForm.controls.title.invalid">
+      <div *ngIf="materialForm.controls.title.errors?.required">
+        <span>Title is required</span>
+      </div>
+    </div>
+  </div>
+  <div>
+    <label for="description">Description: </label>
+    <input id="description" formControlName="description">
+    <div *ngIf="materialForm.controls.description.touched && materialForm.controls.description.invalid">
+      <div *ngIf="materialForm.controls.description.errors?.required">
+        <span>Description is required</span>
+      </div>
+    </div>
+  </div>
+  <div>
+    <label for="url">URL: </label>
+    <input id="url" formControlName="url">
+    <div *ngIf="materialForm.controls.url.touched && materialForm.controls.url.invalid">
+      <div *ngIf="materialForm.controls.url.errors?.required">
+        <span>URL is required</span>
+      </div>
+    </div>
+  </div>
+  <div>
+    <label for="contentType">Content Type: </label>
+    <input id="contentType" formControlName="contentType">
+    <div *ngIf="materialForm.controls.contentType.touched && materialForm.controls.contentType.invalid">
+      <div *ngIf="materialForm.controls.contentType.errors?.required">
+        <span>Content Type is required</span>
+      </div>
+    </div>
+  </div>
+  <div class="button-container">
+    <button type="submit" [disabled]="loading">Submit</button>
+    <button type="button" (click)="resetForm()">Reset</button>
+  </div>
+  <div *ngIf="loading">
+    <span>Loading...</span>
+  </div>
+</form>

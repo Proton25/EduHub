@@ -1,0 +1,131 @@
+/* General Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #e0e0e0;
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    text-align: center;
+    color: #333;
+    margin-top: 20px;
+    font-size: 24px; /* Smaller size */
+    transition: color 0.3s, font-size 0.3s;
+}
+
+h1:hover {
+    color: #007bff;
+}
+
+h1:active {
+    color: #0056b3;
+}
+
+/* Form Styles */
+form {
+    max-width: 480px; /* Reduced by 1cm (10px) on each side */
+    margin: 40px auto;
+    padding: 25px;
+    background-color: #fff;
+    border-radius: 12px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+    text-align: left; /* Align content within the form to the left */
+}
+
+form:hover {
+    transform: scale(1.02);
+}
+
+div {
+    margin-bottom: 15px;
+}
+
+label {
+    font-weight: bold;
+    color: #333;
+    display: block;
+    margin-bottom: 5px;
+    transition: color 0.3s;
+}
+
+input, textarea {
+    width: calc(100% - 20px);
+    padding: 12px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: #fafafa;
+    transition: border-color 0.3s, background-color 0.3s;
+}
+
+input:hover, textarea:hover {
+    border-color: #2980b9; /* Change border color on hover */
+    background-color: #f0faff; /* Light background on hover */
+}
+
+input:focus, textarea:focus {
+    border-color: #3498db;
+    background-color: #eef9ff;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+/* Small Length Input Box */
+input.small-input {
+    width: 50%; /* Adjust the width as needed */
+}
+
+/* Centering and Styling the Button */
+.button-container {
+    display: flex; /* Use flexbox */
+    justify-content: center; 
+    gap: 10px; /* Space between buttons */
+    margin-top: 20px;
+}
+
+button {
+    display: inline-block; /* Change to inline-block */
+    width: 150px; /* Smaller width */
+    padding: 10px 15px; /* Smaller padding */
+    background-color: #3498db;
+    color: #fff;
+    border: none;
+    border-radius: 20px; /* Rounded shape */
+    font-size: 16px; /* Smaller font size */
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+button:hover {
+    background-color: #2980b9;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Loading Spinner */
+div span {
+    font-size: 14px;
+    color: #3498db;
+}
+
+/* Additional Styles */
+textarea {
+    resize: vertical; /* Allow vertical resizing */
+}
+
+@media (max-width: 768px) {
+    form {
+        width: 90%;
+    }
+
+    h1 {
+        font-size: 20px; /* Smaller size for mobile */
+    }
+
+    button {
+        width: 100%; /* Full width*/
+    }
+}

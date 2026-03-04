@@ -1,0 +1,104 @@
+.con {
+    background-image: url("https://static.vecteezy.com/system/resources/previews/030/759/702/large_2x/old-books-on-a-wooden-table-in-the-library-selective-focus-book-stack-with-ladder-on-sky-with-clouds-background-free-photo.jpg");
+    background-size: cover;  /* Ensure the image covers the entire container */
+    background-position: center;  /* Center the background image */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;  /* Full height for the background image */
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+}
+
+.container {
+    background-color: rgba(255, 255, 255, 0.8);  /* Increased opacity for better readability */
+    padding: 20px;  /* Appropriate padding */
+    border-radius: 12px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    width: 500px;  /* Adjusted width */
+    height: auto;  /* Auto height to fit content */
+    max-height: 80vh;  /* Maximum height to avoid overflow */
+    overflow-y: auto;  /* Enable vertical scrolling if content overflows */
+    margin: 0 auto;  /* Center the form */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.container:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+h2 {
+    margin-bottom: 1rem;  /* Reduced margin */
+    color: #333333;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+}
+
+label {
+    display: block;
+    margin-bottom: 0.25rem;  /* Reduced margin */
+    text-align: left;
+    font-weight: bold;
+    color: #333333;
+}
+
+input[type="text"], input[type="email"], input[type="password"], input[type="tel"], select {
+    width: calc(100% - 2rem);
+    padding: 0.5rem 1rem;  /* Reduced padding */
+    margin-bottom: 0.5rem;  /* Reduced margin */
+    border: 1px solid rgba(255, 255, 255, 0.6);  /* Transparent border */
+    background-color: rgba(255, 255, 255, 0.7);  /* Less transparent background */
+    border-radius: 4px;
+    font-size: 1rem;
+    outline: none;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    color: #333333;  /* Text color for readability */
+}
+
+input[type="text"]:focus, input[type="email"]:focus, input[type="password"]:focus, input[type="tel"]:focus, select:focus {
+    border-color: burlywood;
+    box-shadow: 0 0 5px rgba(51, 51, 51, 0.5);
+    background-color: rgba(255, 255, 255, 0.9);  /* Slightly less transparent on focus */
+}
+
+button[type="submit"] {
+    width: 100%;  /* Full width button */
+    padding: 0.75rem 1rem;  /* Increased padding */
+    margin-top: 0.5rem;  /* Space above the button */
+    background-color: #000000;  /* Changed to black */
+    color: #ffffff;
+    border: none;
+    border-radius: 4px;
+    font-size: 1rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+button[type="submit"]:hover {
+    background-color: #333333;  /* Slightly lighter shade of black */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+button[type="submit"]:focus {
+    outline: none;
+    box-shadow: 0 0 5px rgba(51, 51, 51, 0.5);
+}
+
+button[type="submit"]:active {
+    transform: translateY(2px);  /* Slightly moves the button down on click */
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Style for validation messages */
+.validation-message {
+    color: black;
+    font-weight: bold;
+    text-align: left;
+    margin-bottom: 0.5rem;
+    margin-top: -0.5rem;  /* Adjusted to keep validation messages below the input */
+}

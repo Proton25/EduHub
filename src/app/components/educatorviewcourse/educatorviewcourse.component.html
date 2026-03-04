@@ -1,0 +1,72 @@
+<app-adminnav></app-adminnav>
+<h1>Courses</h1>
+<table>
+  <thead>
+    <tr>
+      <th>S.No</th>
+      <th>Title</th>
+      <th>Description</th>
+      <th>Category</th>
+      <th>Level</th>
+      <th>Start Date</th>
+      <th>End Date</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let course of courses; index as i">
+      <td>{{i + 1}}</td>
+      <td>{{course.title}}</td>
+      <td>{{course.description}}</td>
+      <td>{{course.category}}</td>
+      <td>{{course.level}}</td>
+      <td>{{course.courseStartDate | date: 'mediumDate'}}</td>
+      <td>{{course.courseEndDate | date: 'mediumDate'}}</td>
+      <td>
+        <button (click)="editCourse(course.courseId)">Edit</button>
+        <button (click)="deleteCourse(course.courseId)">Delete</button>
+        <button (click)="addMaterial(course.courseId)">Add Material</button>
+        <button (click)="viewMaterial(course.courseId)">View Material</button>
+      </td>
+    </tr>
+  </tbody>
+</table>
+ 
+<!-- Delete Course Dialog -->
+<div class="dialog-overlay" *ngIf="isDeleteDialogVisible && selectedMaterialId === null">
+  <div class="dialog-box">
+    <p>Are you sure you want to delete this course?</p>
+    <div class="dialog-actions">
+      <button (click)="cancelDeleteCourse()">Cancel</button>
+      <button (click)="confirmDeleteCourse()">Yes, Delete</button>
+    </div>
+  </div>
+</div>
+ 
+<!-- View Material Dialog -->
+<div class="dialog-overlay" *ngIf="isViewMaterialDialogVisible">
+  <div class="dialog-box">
+    <h2>Materials for Course: {{selectedCourseTitle}}</h2>
+    <div class="materials-container">
+      <div class="material-item" *ngFor="let material of courseMaterials">
+        <h3>Title: {{material.title}}</h3>
+        <p>Description: {{material.description}}</p>
+        <a [href]="material.url" target="_blank">Open Material</a>
+        <p>Uploaded on: {{material.uploadDate | date:'mediumDate'}}</p>
+        <button (click)="deleteMaterial(material.materialId)">Delete</button>
+      </div>
+    </div>
+    <button (click)="closeViewMaterialDialog()">Close</button>
+  </div>
+</div>
+ 
+<!-- Delete Material Dialog -->
+<div class="dialog-overlay" *ngIf="isDeleteDialogVisible && selectedMaterialId !== null">
+  <div class="dialog-box-small">
+    <p>Are you sure you want to delete this material?</p>
+    <div class="dialog-actions">
+      <button (click)="cancelDeleteMaterial()">Cancel</button>
+      <button (click)="confirmDeleteMaterial()">Yes, Delete</button>
+    </div>
+  </div>
+</div>

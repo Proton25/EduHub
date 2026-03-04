@@ -1,0 +1,135 @@
+  h1 {
+    text-align: center;
+    color: #333;
+    margin-top: 20px;
+    font-size: 24px;
+    transition: color 0.3s, font-size 0.3s;
+  }
+  
+  h1:hover {
+    color: #007bff;
+  }
+  
+  h1:active {
+    color: #0056b3;
+  }
+  
+  form {
+    max-width: 600px;
+    margin: 40px auto;
+    padding: 25px;
+    background-color: #fff;
+    border-radius: 12px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+    text-align: left;
+  }
+  
+  form:hover {
+    transform: scale(1.02);
+  }
+  
+  div {
+    margin-bottom: 15px;
+  }
+  
+  label {
+    font-weight: bold;
+    color: #333;
+    display: block;
+    margin-bottom: 5px;
+    transition: color 0.3s;
+  }
+  
+  input[type="text"],
+  input[type="date"],
+  textarea,
+  select {
+    width: calc(100% - 20px);
+    padding: 12px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: #fafafa;
+    transition: border-color 0.3s, background-color 0.3s;
+  }
+  
+  input[type="text"]:focus,
+  input[type="date"]:focus,
+  textarea:focus,
+  select:focus {
+    border-color: #3498db;
+    background-color: #eef9ff;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+  }
+  
+  input[type="text"].small-input {
+    width: 50%;
+  }
+  
+  table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0 10px;
+    transition: transform 0.3s;
+  }
+  
+  table:hover {
+    transform: scale(1.02);
+  }
+  
+  td {
+    padding: 10px;
+    vertical-align: top;
+    text-align: left;
+    transition: background-color 0.3s;
+  }
+  
+  td:hover {
+    background-color: #f1f1f1;
+  }
+  
+  .submit-button-container {
+    text-align: center;
+  }
+  
+  button[type="submit"] {
+    display: inline-block;
+    width: 200px;
+    margin: 20px auto;
+    padding: 14px 20px;
+    background-color: #3498db;
+    color: #fff;
+    border: none;
+    border-radius: 30px;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  button[type="submit"]:hover {
+    background-color: #2980b9;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+  }
+  
+  textarea {
+    resize: vertical;
+  }
+  
+  @media (max-width: 768px) {
+    form {
+      width: 90%;
+    }
+  
+    h1 {
+      font-size: 20px;
+    }
+  
+    button[type="submit"] {
+      width: 100%;
+    }
+  }
+  

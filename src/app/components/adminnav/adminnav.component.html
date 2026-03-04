@@ -1,0 +1,24 @@
+<nav class="ff container">
+    <h2>EDU-HUB</h2>
+    <p>{{username}}/{{role}}</p>
+    <!-- Client-specific navigation items -->
+    <a routerLink="/admin-home">Home</a>
+    <div class="dropdown">
+        <a (click)="toggleDropdown()">Courses</a>
+        <div class="dropdown-content" [ngClass]="{'show': dropdownOpen}">
+            <a routerLink="/educatoraddcourse">Add Course</a>
+            <a routerLink="/educatorviewCourse">View Course</a>
+        </div>
+    </div>
+    <a routerLink="/enrollmentList">Enrollment Requests</a>
+    <a routerLink="/adminviewfeedback">Feedbacks</a>
+   
+    <button (click)="confirmLogout()">Logout</button>
+   
+    <!-- Confirmation Dialog -->
+    <div *ngIf="showConfirmationDialog" class="confirmation-dialog">
+        <p>Are you sure you want to logout?</p>
+        <button (click)="logout()">Yes, Logout</button>
+        <button (click)="cancelLogout()">Cancel</button>
+    </div>
+  </nav>

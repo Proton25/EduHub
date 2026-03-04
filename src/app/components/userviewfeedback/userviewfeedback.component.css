@@ -1,0 +1,165 @@
+/* General Styles */
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #e0e0e0; /* Light grey background */
+  margin: 0;
+  padding: 0;
+}
+
+h1 {
+  text-align: center;
+  color: #333;
+  margin-top: 20px;
+  font-size: 24px; /* Smaller size */
+  transition: color 0.3s, font-size 0.3s;
+}
+
+h1:hover {
+  color: #007bff;
+}
+
+h1:active {
+  color: #0056b3;
+}
+
+/* Table Styles */
+table {
+  width: 90%;
+  margin: 20px auto;
+  border-collapse: collapse;
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  overflow: hidden;
+  transition: transform 0.3s;
+}
+
+table:hover {
+  transform: scale(1.02); /* Adds a slight zoom effect */
+}
+
+th, td {
+  padding: 15px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+  transition: background-color 0.3s;
+}
+
+th {
+  background-color: #f8f8f8;
+  font-weight: bold;
+  color: #333;
+}
+
+th:hover {
+  background-color: #f1f1f1;
+}
+
+td {
+  cursor: pointer;
+}
+
+td:active {
+  background-color: #e8e8e8;
+}
+
+tr:nth-child(even) {
+  background-color: #f8f8f8;
+}
+
+tr:hover {
+  background-color: #f1f1f1;
+}
+
+/* Button Styles */
+button {
+  display: inline-block; /* Change to inline-block */
+  width: auto; /* Let the width adjust based on content */
+  padding: 6px 12px; /* Reduced padding for smaller size */
+  margin-top: 10px; /* Spacing from the input fields */
+  background-color: #3498db;
+  color: #fff;
+  border: none;
+  border-radius: 15px; /* Rounded shape */
+  font-size: 12px; /* Smaller font size */
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  white-space: nowrap; /* Prevent content from wrapping to the next line */
+}
+
+button:hover {
+  background-color: #2980b9;
+  transform: translateY(-3px);
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+}
+
+button:active {
+  background-color: #1c6ea4;
+  transform: translateY(-1px);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Popup Styles */
+.popup {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #fff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  width: 300px;
+  padding: 20px;
+}
+
+.popup-content {
+  text-align: center;
+}
+
+.popup-content p {
+  margin-bottom: 20px;
+  font-size: 16px;
+  color: #333;
+}
+
+.popup-content button {
+  width: auto;
+  padding: 6px 12px; /* Reduced padding for smaller size */
+  background-color: #3498db;
+  color: #fff;
+  border: none;
+  border-radius: 15px;
+  font-size: 12px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  white-space: nowrap;
+}
+
+.popup-content button:hover {
+  background-color: #2980b9;
+  transform: translateY(-3px);
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+}
+
+.popup-content button:active {
+  background-color: #1c6ea4;
+  transform: translateY(-1px);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Message for No Feedback */
+.no-feedback-message {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 18px;
+  color: #666;
+  transition: color 0.3s, font-size 0.3s;
+}
+
+.no-feedback-message:hover {
+  color: #007bff;
+}

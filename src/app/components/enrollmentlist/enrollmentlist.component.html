@@ -1,0 +1,54 @@
+<app-adminnav></app-adminnav>
+<h1>Enrollments</h1>
+<div class="filter-container">
+    <input type="text" [(ngModel)]="searchText" placeholder="Search by Username">
+    <div class="filter-status">
+        <label>Filter by Status:</label>
+        <select [(ngModel)]="filterStatus" name="filterStatus" (change)="updateFilteredEnrollments()">
+            <option value="All">All</option>
+            <option value="Rejected">Rejected</option>
+            <option value="Approved">Approved</option>
+            <option value="Pending">Pending</option>
+        </select>
+    </div>
+</div>
+<table>
+    <thead>
+        <tr>
+            <th>S.No</th>
+            <th>Username</th>
+            <th>Course Title</th>
+            <th>Enrollment Date</th>
+            <th>Status</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let enrollment of filteredEnrollments| searchenrollment:searchText ; let i=index">
+            <td>{{ i+1 }}</td>
+            <td>{{ enrollment.user.username }}</td>
+            <td>{{ enrollment.course.title }}</td>
+            <td>{{ enrollment.enrollmentDate | date }}</td>
+            <td>{{ enrollment.status }}</td>
+            <td>
+                <ng-container *ngIf="enrollment.status === 'rejected'">
+                    <button (click)="approve(enrollment)">Approve</button>
+                    <button (click)="showMore()">Show More</button>
+                </ng-container>
+                <ng-container *ngIf="enrollment.status === 'approved'">
+                    <button (click)="reject(enrollment)">Reject</button>
+                    <button (click)="showMore()">Show More</button>
+                </ng-container>
+                <ng-container *ngIf="enrollment.status === 'pending'">
+                    <button (click)="approve(enrollment)">Approve</button>
+                    <button (click)="reject(enrollment)">Reject</button>
+                    <button (click)="showMore()">Show More</button>
+                </ng-container>
+            </td>
+        </tr>
+    </tbody>
+</table>
+ 
+ 
+ 
+ 

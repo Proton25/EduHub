@@ -1,0 +1,78 @@
+<app-adminnav></app-adminnav>
+<h1>Create New Course</h1>
+<form [formGroup]="addCourseForm" (ngSubmit)="onSubmit()">
+  <table>
+    <tr>
+      <td><label>Course Title <span>*</span></label></td>
+      <td>
+        <input type="text" formControlName="title" placeholder="Course Title">
+        <div *ngIf="f.title.invalid && (f.title.touched || f.title.dirty)">
+          <span *ngIf="f.title.errors?.required">*Course Title is required</span>
+        </div>
+      </td>
+    </tr>
+    <tr>
+      <td><label>Description <span>*</span></label></td>
+      <td>
+        <input type="text" formControlName="description" placeholder="Course Description">
+        <div *ngIf="f.description.invalid && (f.description.touched || f.description.dirty)">
+          <span>*Description is required</span>
+        </div>
+      </td>
+    </tr>
+    <tr>
+      <td><label>Course Start Date <span>*</span></label></td>
+      <td>
+        <input type="date" formControlName="courseStartDate" placeholder="Course Start Date">
+        <div *ngIf="f.courseStartDate.invalid && (f.courseStartDate.touched || f.courseStartDate.dirty)">
+          <span>*Course Start Date is required</span>
+        </div>
+      </td>
+    </tr>
+    <tr>
+      <td><label>Course End Date <span>*</span></label></td>
+      <td>
+        <input type="date" formControlName="courseEndDate" placeholder="Course End Date">
+        <div *ngIf="f.courseEndDate.invalid && (f.courseEndDate.touched || f.courseEndDate.dirty)">
+          <span>*Course End Date is required</span>
+        </div>
+      </td>
+    </tr>
+    <tr>
+      <td><label>Category <span>*</span></label></td>
+      <td>
+        <input type="text" formControlName="category" placeholder="Category">
+        <div *ngIf="f.category.invalid && (f.category.touched || f.category.dirty)">
+          <span>*Category is required</span>
+        </div>
+      </td>
+    </tr>
+    <tr>
+      <td><label>Level <span>*</span></label></td>
+      <td>
+        <select formControlName="level">
+          <option value=""></option>
+          <option value="beginner">Beginner</option>
+          <option value="intermediate">Intermediate</option>
+          <option value="expert">Expert</option>
+        </select>
+        <div *ngIf="f.level.invalid && (f.level.touched || f.level.dirty)">
+          <span>*Level is required</span>
+        </div>
+      </td>
+    </tr>
+  </table>
+  <div class="submit-button-container">
+    <button type="submit" [disabled]="addCourseForm.invalid">Submit</button>
+  </div>
+</form>
+<dialog id="successModal">
+  <div class="modal-content">
+    <div class="modal-body">
+      <p><span class="tick">✔</span> Course successfully added!</p>
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-secondary" (click)="closeModal()">OK</button>
+    </div>
+  </div>
+</dialog>

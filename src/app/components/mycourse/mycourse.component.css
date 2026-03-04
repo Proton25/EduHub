@@ -1,0 +1,132 @@
+/* General Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #e0e0e0; /* Light grey background */
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    text-align: center;
+    color: #333;
+    margin-top: 20px;
+    font-size: 24px; /* Smaller size */
+    transition: color 0.3s, font-size 0.3s;
+}
+
+h1:hover {
+    color: #007bff;
+}
+
+h1:active {
+    color: #0056b3;
+}
+
+/* Table Styles */
+table {
+    width: 90%;
+    margin: 20px auto;
+    border-collapse: collapse;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    overflow: hidden;
+    transition: transform 0.3s;
+}
+
+table:hover {
+    transform: scale(1.02); /* Adds a slight zoom effect */
+}
+
+th, td {
+    padding: 15px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+    transition: background-color 0.3s;
+}
+
+th {
+    background-color: #f8f8f8;
+    font-weight: bold;
+    color: #333;
+}
+
+th:hover {
+    background-color: #f1f1f1;
+}
+
+td {
+    cursor: pointer;
+}
+
+td:active {
+    background-color: #e8e8e8;
+}
+
+tr:nth-child(even) {
+    background-color: #f8f8f8;
+}
+
+tr:hover {
+    background-color: #f1f1f1;
+}
+
+/* Small button styling */
+button {
+    display: inline-block; /* Change to inline-block */
+    width: 100px; /* Smaller width */
+    margin: 5px; /* Smaller margin */
+    padding: 8px 12px; /* Smaller padding */
+    background-color: #3498db;
+    color: #fff;
+    border: none;
+    border-radius: 20px; /* Rounded shape */
+    font-size: 14px; /* Smaller font size */
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+button:hover {
+    background-color: #2980b9;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+}
+.no-courses-message {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 18px;
+    color: #666;
+    transition: color 0.3s, font-size 0.3s;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.no-courses-message:hover {
+    color: #007bff;
+}
+/* Additional Styles */
+textarea {
+    resize: vertical; /* Allow vertical resizing */
+}
+
+@media (max-width: 768px) {
+    table {
+        width: 100%;
+    }
+
+    h1 {
+        font-size: 20px; /* Smaller size for mobile */
+    }
+
+    button {
+        width: 100%; /* Full width on mobile */
+    }
+
+    .no-courses-message {
+        font-size: 16px; /* Smaller font size for mobile */
+    }
+}

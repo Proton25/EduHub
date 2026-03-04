@@ -1,0 +1,67 @@
+<app-navbar></app-navbar>
+<div class="con">
+  <div class="container">
+    <form [formGroup]="registrationForm" (ngSubmit)="register()">
+      <h2>Registration</h2>
+      <div class="form-group">
+        <label for="username">Username*</label>
+        <input type="text" id="username" formControlName="username" required>
+        <div class="error validation-message"
+          *ngIf="registrationForm.get('username').invalid && (registrationForm.get('username').dirty || registrationForm.get('username').touched)">
+          Username is required.
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="email">Email*</label>
+        <input type="email" id="email" formControlName="email" required>
+        <div class="error validation-message"
+          *ngIf="registrationForm.get('email').invalid && (registrationForm.get('email').dirty || registrationForm.get('email').touched)">
+          Valid email is required.
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="password">Password*</label>
+        <input type="password" id="password" formControlName="password" required>
+        <div class="error validation-message"
+          *ngIf="registrationForm.get('password').invalid && (registrationForm.get('password').dirty || registrationForm.get('password').touched)">
+          Password is required.
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="confirmPassword">Confirm Password*</label>
+        <input type="password" id="confirmPassword" formControlName="confirmPassword" required>
+        <div class="error validation-message"
+          *ngIf="registrationForm.get('confirmPassword').invalid && (registrationForm.get('confirmPassword').dirty || registrationForm.get('confirmPassword').touched)">
+          Confirmation of password is required.
+        </div>
+        <div class="error validation-message"
+          *ngIf="registrationForm.get('confirmPassword').hasError('mismatch') && registrationForm.get('confirmPassword').dirty">
+          Passwords do not match.
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="mobileNumber">Mobile Number*</label>
+        <input type="tel" id="mobileNumber" formControlName="mobileNumber" required>
+        <div class="error validation-message"
+          *ngIf="registrationForm.get('mobileNumber').invalid && (registrationForm.get('mobileNumber').dirty || registrationForm.get('mobileNumber').touched)">
+          Mobile number is required.
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="role">Role*</label>
+        <select id="role" formControlName="role" required>
+          <option value="" disabled>Select a role</option>
+          <option value="STUDENT">STUDENT</option>
+          <option value="EDUCATOR">EDUCATOR</option>
+        </select>
+        <div class="error validation-message"
+          *ngIf="registrationForm.get('role').invalid && (registrationForm.get('role').dirty || registrationForm.get('role').touched)">
+          Role is required.
+        </div>
+      </div>
+      <div class="form-group">
+        <button type="submit" [disabled]="registrationForm.invalid">Register</button>
+      </div>
+    </form>
+  </div>
+</div>

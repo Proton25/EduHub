@@ -1,0 +1,30 @@
+<app-usernav></app-usernav>
+
+<h1>My Courses</h1>
+
+<div *ngIf="enrollments.length === 0" class="no-courses-message">
+  <p>No enrollments found.</p>
+</div>
+
+<table *ngIf="enrollments.length > 0">
+  <thead>
+    <tr>
+      <th>S.No</th>
+      <th>Course Name</th>
+      <th>Enrollment Date</th>
+      <th>Status</th>
+      <th>Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let item of enrollments; let index = index">
+      <td>{{ index + 1 }}</td>
+      <td>{{ item.courseTitle }}</td>
+      <td>{{ item.enrollmentDate | date: 'mediumDate'}}</td>
+      <td>{{ item.status }}</td>
+      <td>
+        <button type="submit" (click)="unEnrollCourse(item.enrollmentId)">Unenroll</button>
+      </td>
+    </tr> 
+  </tbody>
+</table>

@@ -1,0 +1,143 @@
+
+/* Container Styles */
+.container {
+    flex: 1; /* Ensures the container takes up remaining space */
+    width: 100%;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-image: url("https://static.vecteezy.com/system/resources/previews/030/805/488/non_2x/abstract-tree-growing-from-a-book-mental-training-and-education-concept-free-photo.jpg");
+    background-size: cover; /* Cover the entire container */
+    background-position: center;
+    background-repeat: no-repeat;
+    padding-top: 50px; /* Add more padding to top to prevent touching the navbar */
+}
+
+/* Center Content Vertically and Horizontally */
+.EdHub-background-image {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+}
+
+/* Translucent Background for Content */
+.translucent-bg {
+    background: rgba(255, 255, 255, 0.5); /* More transparent */
+    padding: 40px;
+    padding-top: 20px; /* Added padding to top */
+    margin-top: 60px; /* Added more margin-top to prevent touching the navbar */
+    border-radius: 15px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    max-width: 800px;
+    margin: auto; /* Center the box */
+    transition: background 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Hover Effects */
+.translucent-bg:hover {
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3); /* Enhanced shadow on hover */
+}
+
+/* Heading Styles */
+h1 {
+    text-align: center;
+}
+
+h2 {
+    font-size: 2em;
+    font-weight: 700;
+    color: black;
+    margin-bottom: 25px;
+    margin-top: 0; /* Ensure no margin on top */
+    transition: color 0.3s ease;
+}
+
+h1:hover, h2:hover {
+    color: #2c476a; /* Change text color on hover */
+}
+
+/* Paragraph Styles */
+p {
+    font-size: 1em;
+    line-height: 1.8;
+    color: black;
+    transition: color 0.3s ease;
+}
+
+p:hover {
+    color: #333; /* Change text color on hover */
+}
+
+/* Footer Styles */
+/* Footer Styles */
+.edhub-footer {
+    background-color: black;
+    color: white; /* White text */
+    /* padding: 20px 0;  */
+    position: relative;
+    width: 100%;
+    bottom: 0;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* .edhub-footer:hover {
+    background-color: #243957; 
+} */
+
+.translucent-footer-bg {
+    background: rgba(255, 255, 255, 0.1); /* Light translucent background */
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    transition: background 0.3s ease, box-shadow 0.3s ease;
+}
+
+.translucent-footer-bg:hover {
+    background: rgba(255, 255, 255, 0.2); /* Slightly more transparent on hover */
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.3); /* Enhanced shadow on hover */
+}
+
+.footer-text {
+    font-size: 0.9em;
+    margin: 0;
+    color: white; /* White text */
+}
+
+
+@media (max-width: 768px) {
+    .edhub-footer {
+        padding: 15px 0;
+    }
+    
+    .translucent-footer-bg {
+        padding: 5px;
+    }
+    
+    .footer-text {
+        font-size: 0.8em;
+    }
+}
+
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .translucent-bg {
+        padding: 20px;
+        padding-top: 60px; /* Adjusted padding for smaller screens */
+        margin: 10px;
+    }
+    
+    h2 {
+        font-size: 1.5em; /* Decreased font size for h2 in smaller screens */
+    }
+    
+    p {
+        font-size: 0.875em; /* Decreased font size for paragraph in smaller screens */
+    }
+}
